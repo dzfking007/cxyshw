@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>coderlife-parent-1.0.0</artifactId>
+		<groupId>com.kedacom.coderlife</groupId>
+		<version>1.0.0</version>
+	</parent>
+	<groupId>com.kedacom.coderlife</groupId>
+	<artifactId>coderlife-webapp</artifactId>
+	<version>1.0.0</version>
+	<packaging>war</packaging>
+	<name>CoderLife::Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>com.kedacom.coderlife</groupId>
+			<artifactId>coderlife-bussiness</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>6.0.32</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>coderlife</finalName>
+		<!-- 设定Web应用中编译结果输出到WEB-INF/classes 中，与使用IDE时相同 -->
+		<outputDirectory>${basedir}/webapp/WEB-INF/classes</outputDirectory>
+
+		<pluginManagement>
+			<plugins>
+				<!-- war插件,设定webapp目录为/webapp,war名称不带版本号 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.1</version>
+					<configuration>
+						<warSourceDirectory>${basedir}/webapp</warSourceDirectory>
+						<webResources>
+							<resource>
+								<filtering>true</filtering>
+								<directory>${basedir}/webapp</directory>
+								<includes>
+									<include>resource.jsp</include>
+								</includes>
+							</resource>
+						</webResources>
+					</configuration>
+				</plugin>
+
+				<!-- compiler插件,设定JDK版本 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+
+				<!-- resource插件,设定编码 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+
+				<!-- surefire插件. -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.8.1</version>
+					<configuration>
+						<skip>${surefire.test.skip}</skip>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<!-- jetty -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.26</version>
+				<configuration>
+					<contextPath>/coderlife</contextPath>
+					<webAppSourceDirectory>${basedir}/webapp</webAppSourceDirectory>
+					<webXmlFile>${basedir}/webapp/WEB-INF/web.xml</webXmlFile>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<jettyEnvXml>${basedir}/src/test/resources/jetty-env.xml</jettyEnvXml>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>80</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
