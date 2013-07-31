@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import com.kedacom.coderlife.business.adapter.JdbcDaoAdapter;
 import com.kedacom.coderlife.business.model.User;
 
+
 @Repository("userDao")
 public class UserDao extends JdbcDaoAdapter{
 

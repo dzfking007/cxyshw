@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.kedacom.coderlife.business.dao.UserDao;
 
+
 @Service("userDetailService")
 public class UserDetailServiceImpl implements UserDetailService{
 

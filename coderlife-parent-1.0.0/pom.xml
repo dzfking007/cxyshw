@@ -9,7 +9,7 @@
 	<description>parent</description>
 	<packaging>pom</packaging>
 	<modules>
-		<module>coderlife-bussiness</module>
+		<module>coderlife-business</module>
 		<module>coderlife-webapp</module>
 	</modules>
 	<properties>
