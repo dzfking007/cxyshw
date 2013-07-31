@@ -1,4 +1,4 @@
-package com.kedacom.coderlife.bussiness.adapter;
+package com.kedacom.coderlife.business.adapter;
 
 import java.sql.ResultSet;
 import java.util.Map;
@@ -14,7 +14,7 @@ import org.springframework.util.StringUtils;
 
 
 public abstract class JdbcDaoAdapter extends SimpleJdbcDaoSupport{
-	@Resource(name = "mJdbcTemplate")
+	@Resource(name = "clJdbcTemplate")
 	private JdbcTemplate jdbcTemplate;
 
 	protected Logger logger = LoggerFactory.getLogger(getClass());

@@ -1,9 +1,9 @@
-package com.kedacom.coderlife.bussiness.dao;
+package com.kedacom.coderlife.business.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.kedacom.coderlife.bussiness.adapter.JdbcDaoAdapter;
-import com.kedacom.coderlife.bussiness.model.User;
+import com.kedacom.coderlife.business.adapter.JdbcDaoAdapter;
+import com.kedacom.coderlife.business.model.User;
 
 @Repository("userDao")
 public class UserDao extends JdbcDaoAdapter{

@@ -13,6 +13,17 @@
 						http://www.springframework.org/schema/tx
 						http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 	<context:annotation-config />
-	<context:component-scan base-package="com.kedacom.coderlife.*"  annotation-config="false" />  
+	<context:component-scan base-package="com.kedacom.coderlife"  annotation-config="false" />
+	<bean id="cldataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/coderlife" />
+	</bean>
+
+	<bean id="clJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="cldataSource" />
+	</bean>
+
+	<bean id="clManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" >
+		<property name="dataSource" ref="cldataSource" />
+	</bean>  
 	<import resource="classpath*:applicationContext-bussiness.xml"/>
 </beans>

@@ -1,4 +1,4 @@
-package com.kedacom.coderlife.bussiness.service;
+package com.kedacom.coderlife.business.service;
 
 /**
  * 

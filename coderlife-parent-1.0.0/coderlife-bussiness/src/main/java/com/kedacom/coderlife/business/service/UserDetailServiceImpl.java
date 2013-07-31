@@ -1,4 +1,4 @@
-package com.kedacom.coderlife.bussiness.service;
+package com.kedacom.coderlife.business.service;
 
 import javax.annotation.Resource;
 
@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.kedacom.coderlife.bussiness.dao.UserDao;
+import com.kedacom.coderlife.business.dao.UserDao;
 
 @Service("userDetailService")
 public class UserDetailServiceImpl implements UserDetailService{
