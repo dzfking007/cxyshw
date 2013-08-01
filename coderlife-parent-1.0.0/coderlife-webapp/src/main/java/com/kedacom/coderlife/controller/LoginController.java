@@ -17,10 +17,8 @@ public class LoginController {
 	private UserDetailService userDetailService;
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String checkLogin(){
-		userDetailService.checkLogin();
-		return "Login1111";
+		userDetailService.checkLogin("a","b");
+		return "login";
 	}
 	
-	
-
 }
