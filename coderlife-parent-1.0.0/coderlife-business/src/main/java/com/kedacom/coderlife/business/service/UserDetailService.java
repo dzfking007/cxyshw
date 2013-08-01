@@ -1,11 +1,13 @@
 package com.kedacom.coderlife.business.service;
 
+import com.kedacom.coderlife.business.model.User;
+
 /**
  * 
  */
 public interface UserDetailService {
 	
-	public void checkLogin();
+	public User checkLogin(String username, String password);
 	
     
 }
