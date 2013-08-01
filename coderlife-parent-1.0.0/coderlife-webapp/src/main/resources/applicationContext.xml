@@ -26,4 +26,5 @@
 		<property name="dataSource" ref="cldataSource" />
 	</bean>  
 	<import resource="classpath*:applicationContext-bussiness.xml"/>
+	<import resource="classpath*:applicationContext-springsecurity.xml"/>
 </beans>
