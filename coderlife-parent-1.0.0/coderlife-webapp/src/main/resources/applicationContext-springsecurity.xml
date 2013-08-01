@@ -10,7 +10,7 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
-	<!-- 安全拦截器配置 -->
+	<!-- 安全拦截器配qqqqqq置 -->
 	<security:http auto-config="true" access-denied-page="/denied">
 		<!-- 登录界面配置-->
 		<security:form-login login-page="/login"/>
