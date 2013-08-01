@@ -22,6 +22,14 @@
 							<div class="photo">
 								<img src="${RESOUCE_STATIC_URL}/images/photo.jpg"/>
 							</div>
+							<div class="nav_user_set">
+								<div class="group seprate">
+									<div class="setting">设置</div>
+								</div>
+								<div class="group">
+									<div class="logout">注销</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
