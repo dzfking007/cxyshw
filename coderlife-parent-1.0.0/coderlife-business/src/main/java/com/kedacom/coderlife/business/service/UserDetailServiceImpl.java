@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.kedacom.coderlife.business.dao.UserDao;
+import com.kedacom.coderlife.business.model.User;
 
 
 @Service("userDetailService")
@@ -17,10 +18,10 @@ public class UserDetailServiceImpl implements UserDetailService{
 	
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 	
-	public void checkLogin() {
+	public User checkLogin(String username, String password) {
 		
-		userDao.getUser();
-		logger.info("check Login!");
+		User u = userDao.getUser(username);
+		return u;
 	}
 
 }

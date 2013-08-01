@@ -27,7 +27,6 @@ public class LoginController {
 	public void checkLogin(HttpServletResponse response,String userName,String password){
 		JSONObject obj = new JSONObject();
 		try{
-//			userDetailService.checkLogin();
 			if(true){
 				obj.put("success", Boolean.TRUE);
 				obj.put("description","登录成功！");
@@ -48,7 +47,6 @@ public class LoginController {
 	public void registerUser(HttpServletResponse response,String userName,String password){
 		JSONObject obj = new JSONObject();
 		try{
-//			userDetailService.checkLogin();
 			obj.put("success", Boolean.TRUE);
 			obj.put("description","注册成功！");
 		}catch(Exception e){
