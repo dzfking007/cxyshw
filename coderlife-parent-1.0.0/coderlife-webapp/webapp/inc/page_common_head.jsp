@@ -1,3 +1,4 @@
+<link rel="icon" href="${RESOUCE_STATIC_URL}/images/photo.jpg" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="${RESOUCE_STATIC_URL}/css/src/reset.css"/>
 <link rel="stylesheet" type="text/css" href="${RESOUCE_STATIC_URL}/css/basic.css"/>
 <script type="text/javascript" src="${RESOUCE_STATIC_URL}/js/src/jquery-1.8.0.min.js"></script>
