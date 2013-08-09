@@ -17,12 +17,12 @@
 					<div class="navigator_sub">猿猿们&&媛媛们的那些事~</div>
 					<div class="navigator_right">
 						<div class="login_btn">登录</div>
-						<div class="register_btn">注册</div>
-						<div class="nav_user">
-							<div class="photo">
-								<img src="${RESOUCE_STATIC_URL}/images/photo.jpg"/>
+						<div class="register_btn"><a href="${RESOUCE_SYSTEM_URL}/register">注册</a></div>
+						<div class="nav_user hidden">
+							<div class="photo hidden">
+								<img src="${RESOUCE_STATIC_URL}/images/photo.png"/>
 							</div>
-							<div class="nav_user_set">
+							<div class="nav_user_set hidden">
 								<div class="group seprate">
 									<div class="setting">设置</div>
 								</div>
@@ -34,9 +34,9 @@
 					</div>
 				</div>
 			</div>
-			<%@ include file="/inc/page_common_login.jsp" %>
 		    <div id="content">
 				<div class="photo_wall"></div>
+				<%@ include file="/inc/page_common_login.jsp" %>
 			</div>
 		    <div id="footer" style="display: none;">foot</div>
 	   	</div>

@@ -2,7 +2,7 @@
 <div id="login_info">
 	<div class="login_info_title">
 		<div class="login_info_regist_desc">还没有可用的账号，现在加入</div>
-		<div class="login_info_regist_btn">立即注册</div>
+		<div class="login_info_regist_btn"><a href="${RESOUCE_SYSTEM_URL}/register">立即注册</a></div>
 	</div>
 	<div class="login_info_detail">
 		<div class="close_btn">

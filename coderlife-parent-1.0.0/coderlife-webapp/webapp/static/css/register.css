@@ -1,0 +1,168 @@
+html body{
+	background: url("../images/test.png") repeat scroll left top transparent;
+    margin: 0 auto;
+	/**opacity: 0.8;**/
+}
+#register{
+	width:700px;
+	height:480px;
+	margin:80px auto;
+	background-color:#EDF1EA;
+	border: 2px solid rgb(177, 184, 174);
+	border-radius:3px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+#header_desc{
+	font-size: 24px;
+    height: 50px;
+    left: 25px;
+    margin: 10px 0 0 20px;
+}
+
+#register_area{
+	width:700px;
+	height:350px;
+	border:0px solid red;
+}
+
+#item_area{
+	width:430px;
+	height:350px;
+	float: left;
+	border-right: 2px solid rgb(177, 184, 174);
+}
+
+#item_area .group{
+	border: 0 solid red;
+    height: 60px;
+    margin-left: 15px;
+    margin-top: 15px;
+    width: 310px;
+}
+
+#item_area .group .label{
+	color: black;
+    float: left;
+    font-size: 14px;
+    height: 28px;
+    line-height: 2.2;
+    text-align: right;
+    width: 100px;
+}
+#item_area .group .value{
+	border: 1px solid #BBBBBB;
+    float: left;
+    height: 28px;
+    margin-left: 10px;
+    width: 190px;
+}
+
+#item_area .group .identify_code_val{
+	width: 85px;
+}
+
+#item_area .group .value input{
+	width:190px;
+	height: 28px;
+	border:none;
+}
+
+#item_area .group .identify_code_val input{
+	width: 85px;
+}
+
+#item_area .group .error_msg{
+	border: 0 solid green;
+    float: right;
+    height: 28px;
+    margin-right: 8px;
+    width: 180px;
+}
+
+.item_area_btn{
+	height: 35px;
+    margin-left: 40px;
+    margin-top: 10px;
+    width: 310px;
+}
+
+#item_area_btn_register_btn{
+	background-color: #F04D4D;
+    border: 1px solid #F04D4D;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    letter-spacing: 5px;
+    line-height: 1.9;
+    margin: 0 auto;
+    text-align: center;
+    width: 230px;
+}
+
+.desc_area_login{
+	border-bottom: 1px dotted gray;
+    font-size: 14px;
+    height: 28px;
+    line-height: 1.8;
+    margin-left: 20px;
+    width: 200px;	
+}
+
+.desc_area_login_label,.desc_area_login_link{
+	float: left;
+	margin-left: 7px;
+}
+
+.desc_area_login_link a{
+	color: #0a8cd2;
+}
+
+.desc_area_login_link a:hover {
+	text-decoration: underline;
+}
+
+.refresh_btn{
+	background: url("../images/verify_refresh.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 18px;
+    overflow: hidden;
+    position: relative;
+    top: 6px;
+    left: 20px;
+    width: 18px;
+}
+
+.identify_code_img{
+	float: left;
+    height: 28px;
+    left: 10px;
+    position: relative;
+    width: 90px;
+}
+
+.identify_code_img img{
+	width: 80px;
+	height:26px;
+	cursor: pointer;
+	padding: 2px;
+}
+
+.refresh_btn:hover{
+	background-position: 0px -18px;
+}
+
+
+
+
+
+
+
+#desc_area{
+	width:260px;
+	height:350px;
+	float: right;
+	border:0px solid yellow;
+}

@@ -25,30 +25,29 @@ BT.login = {
 		
 		//登录页面登录按钮
 		loginDom.find(".login_info_btn").bind('click',function(){
-			that.submitLoginForm();
+			that.login();
 			that.hideLoginForm();
 		});
-	},
-	clearLoginData:function(){
-		var inputDom = $(this.loginDom).find("input");
-		$.each(inputDom,function(i,item){
-			$(item).val("");
+		
+		//当前用户头像
+		userNavigater.find(".nav_user").bind('mouseover',function(){
+			if(!$(this).hasClass("hidden")){
+				$(this).addClass("photo_hover");
+				$(this).find(".nav_user_set").removeClass("hidden");
+			}
+		}).bind('mouseout',function(){
+			$(this).removeClass("photo_hover");
+			$(this).find(".nav_user_set").addClass("hidden");
+		});
+		
+		//当前用户头像
+		userNavigater.find(".logout").bind('click',function(){
+			that.logout();
 		});
 	},
-	hideLoginForm:function(){
-		this.clearLoginData();
-		this.loginDom.fadeOut("slow");
-	},
-	showLoginForm:function(){
-		this.loginDom.fadeIn("slow");
-	},
-	hideNavigatorLoginOrRegisterBtn:function(){
-		$(this.userNavigater).find(".login_btn,.register_btn").hide();
-	},
-	showNavigatorLoginOrRegisterBtn:function(){
-		$(this.userNavigater).find(".login_btn,.register_btn").show();
-	},
-	submitLoginForm:function(){
+	
+	/**登录*/
+	login:function(){
 		var that = this;
 			loginDom = $(this.loginDom),
 			userName = loginDom.find("input[name='username']").val(),
@@ -61,14 +60,64 @@ BT.login = {
 			function(t){
 				if(t.success){
 					that.hideLoginForm();
-					that.hideNavigatorLoginOrRegisterBtn();
-					$("#content").find(".photo_wall").append("<div style='color:red;font-weight:bold;font-size:25px;text-align:center;'>hello!"+userName+"</div>");
+					that.afterLogin();
+					$("#content").find(".photo_wall").html("<div style='color:red;font-weight:bold;font-size:25px;text-align:center;'>hello!"+userName+"</div>");
 				}else{
 					alert(t.description);
 				}
 			},
 		'json');
-		
+	},
+	
+	/**注销*/
+	logout:function(){
+		var that = this;
+			url = BT.common.getSystemURL("logout");
+		$.post(
+			url,
+			function(t){
+				if(t.success){
+					that.beforeLogin();
+				}else{
+					alert(t.description);
+				}
+			},
+		'json');
+	},
+	
+	/**清除登录信息*/
+	clearLoginData:function(){
+		var inputDom = $(this.loginDom).find("input");
+		$.each(inputDom,function(i,item){
+			$(item).val("");
+		});
+	},
+	
+	/**隐藏登录页面*/
+	hideLoginForm:function(){
+		this.clearLoginData();
+		this.loginDom.fadeOut("slow");
+	},
+	
+	/**显示登录页面*/
+	showLoginForm:function(){
+		this.loginDom.fadeIn("slow");
+	},
+	
+	/**登录成功之后的操作*/
+	afterLogin:function(){
+		//location.href = BT.common.getSystemURL("");
+		$(this.userNavigater).find(".login_btn,.register_btn").hide();
+		$(this.userNavigater).find(".photo").removeClass("hidden");
+		$(this.userNavigater).find(".nav_user").removeClass("photo_hover").removeClass("hidden");
+	},
+	
+	/**注销成功之后的操作*/
+	beforeLogin:function(){
+		$(this.userNavigater).find(".photo").addClass("hidden");
+		$(this.userNavigater).find(".nav_user_set").addClass("hidden");
+		$(this.userNavigater).find(".nav_user").removeClass("photo_hover").addClass("hidden");
+		$(this.userNavigater).find(".login_btn,.register_btn").show();
 	}
 
 }

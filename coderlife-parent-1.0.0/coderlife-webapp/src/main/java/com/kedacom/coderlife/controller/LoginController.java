@@ -21,10 +21,28 @@ public class LoginController {
 	private UserDetailService userDetailService;
 	
 	/**
+	 * 注册
+	 * */
+	@RequestMapping(value="registerUser",method=RequestMethod.POST)
+	public void registerUser(HttpServletResponse response,String userName,String password){
+		JSONObject obj = new JSONObject();
+		try{
+			obj.put("success", Boolean.TRUE);
+			obj.put("description","注册成功！");
+		}catch(Exception e){
+			obj.put("success", Boolean.FALSE);
+			obj.put("description", e.getMessage());
+			e.printStackTrace();
+		}finally{
+			DirectlyRenderUtils.renderJson(response,obj);
+		}
+	}
+	
+	/**
 	 * 登录
 	 * */
 	@RequestMapping(value="login",method=RequestMethod.POST)
-	public void checkLogin(HttpServletResponse response,String userName,String password){
+	public void login(HttpServletResponse response,String userName,String password){
 		JSONObject obj = new JSONObject();
 		try{
 			if(true){
@@ -41,14 +59,16 @@ public class LoginController {
 	}
 	
 	/**
-	 * 注册
+	 * 注销
 	 * */
-	@RequestMapping(value="register",method=RequestMethod.POST)
-	public void registerUser(HttpServletResponse response,String userName,String password){
+	@RequestMapping(value="logout",method=RequestMethod.POST)
+	public void loginout(HttpServletResponse response){
 		JSONObject obj = new JSONObject();
 		try{
-			obj.put("success", Boolean.TRUE);
-			obj.put("description","注册成功！");
+			if(true){
+				obj.put("success", Boolean.TRUE);
+				obj.put("description","注销成功！");
+			}
 		}catch(Exception e){
 			obj.put("success", Boolean.FALSE);
 			obj.put("description", e.getMessage());
@@ -56,6 +76,5 @@ public class LoginController {
 		}finally{
 			DirectlyRenderUtils.renderJson(response,obj);
 		}
-	
 	}
 }

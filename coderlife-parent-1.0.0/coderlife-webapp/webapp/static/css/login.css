@@ -75,6 +75,10 @@
 	margin-top: 25px;
 }
 
+.login_info_regist_btn a{
+	color: #FFFFFF;
+}
+
 .info_username{
 	border: 1px solid #BBBBBB;
     height: 28px;
